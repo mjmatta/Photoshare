@@ -1,0 +1,31 @@
+<!doctype html>
+{% if photo %}
+    <img src='data:image/jpg;base64, {{ base64.b64encode(photo[0]).decode("ascii") }}'/>
+{% endif %}
+<p>Likes: {{likes}}</p>
+<form action="{{ url_for('add_like', Number=number) }}" method="POST">
+    <button type="submit" value="Like" class="btn btn-default submit" name="action">Like</button>
+</form>
+
+<form action="{{ url_for('add_like', Number=number) }}" method="POST">
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Write here..." name="comment">
+    </div>
+    <button type="submit" value="Comment" class="btn btn-default submit" name="action">Submit Comment</button>
+</form>
+
+{% if tags %}
+<h3>Tags: {{tags}}</h3>
+{% endif %}
+
+{% if comments %}
+<h4>Comments: {{comments}}</h4>
+{% endif %}
+
+<form action="{{ url_for('add_like', Number=999) }}" method="POST">
+    <button type="submit" value="DeletePhoto" class="btn btn-default submit" name="action">Delete Photo</button>
+</form>
+
+<form action="{{ url_for('add_like', Number=999) }}" method="POST">
+    <button type="submit" value="DeleteAlbum" class="btn btn-default submit" name="action">Delete Album</button>
+</form>

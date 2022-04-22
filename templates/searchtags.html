@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<form action="{{ url_for('search_tags') }}" method="POST">
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="tags..." name="tags">
+    </div>
+    <button type="submit" value="Search Tags" class="btn btn-default submit">Search for tags</button>
+</form>
+{% if photos %}
+<ul>
+    <h2>Pictures with {{tagNames}}</h2>
+    {% for tag in photos %}
+        {% for photo in tag %}
+
+            <li>{{photo[2]}}<br>
+            <img src='data:image/jpg;base64, {{ base64.b64encode(photo[0]).decode("ascii") }}'/></li>
+        {% endfor %}
+    {% endfor %}
+</ul>
+{% endif %}

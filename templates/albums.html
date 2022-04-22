@@ -1,0 +1,14 @@
+<!doctype html>
+{% if albums %}
+    {% for album in albums %}
+        <h1>Here is album {{album[1]}}</h1>
+        <h2>Here are all the photos</h2>
+            <ul>
+            {% for photo in album[4] %}
+
+                <li>{{photo[2]}}<br>
+                <img src='data:image/jpg;base64, {{ base64.b64encode(photo[0]).decode("ascii") }}'/></li>
+            {% endfor %}
+            </ul>
+    {% endfor %}
+{% endif %}

@@ -1,0 +1,16 @@
+<!doctype html>
+{% if friends %}
+    <h4>Friends list: {{friends}}</h4>
+{% endif %}
+
+<form action="{{ url_for('friend_add') }}" method="POST">
+    <div class="form-group" id="#add-friend">
+        <input type="text" class="form-control" placeholder="friend email" name="email">
+    </div>
+    <button type="submit" value="Add Friend" class="btn btn-default submit">Add friend</button>
+</form>
+
+<p>Friends of your friends {{recFriends}}</p>
+
+<p> Go to <a href='/profile'>profile?</a></p>
+<a href='/'>Home</a>

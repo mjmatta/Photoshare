@@ -1,0 +1,6 @@
+<!DOCTYPE html>
+<ul>
+{% for tag in tags %}
+<a href="/tags/{{tag[1]}}"><li>{{tag[0]}}</li></a>
+{% endfor %}
+</ul>

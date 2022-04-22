@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<form action="{{ url_for('search_comments') }}" method="POST">
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="comment..." name="search">
+    </div>
+    <button type="submit" value="Search Comments" class="btn btn-default submit">Search for comments</button>
+</form>
+{% if comments %}
+<ul>
+    {% for user in comments %}
+
+        <li>{{user[0]}} commented this {{user[1]}} times<br>
+    {% endfor %}
+</ul>
+{% endif %}
