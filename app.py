@@ -1,14 +1,3 @@
-######################################
-# author ben lawson <balawson@bu.edu>
-# Edited by: Craig Einstein <einstein@bu.edu>
-######################################
-# Some code adapted from
-# CodeHandBook at http://codehandbook.org/python-web-application-development-using-flask-and-mysql/
-# and MaxCountryMan at https://github.com/maxcountryman/flask-login/
-# and Flask Offical Tutorial at  http://flask.pocoo.org/docs/0.10/patterns/fileuploads/
-# see links for further understanding
-###################################################
-
 import flask
 from flask import Flask, Response, request, render_template, redirect, url_for
 from flaskext.mysql import MySQL
